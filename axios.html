@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+    <title>Fetch Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="style.css" rel="stylesheet" type= "text/css">
+</head>
+<body>
+    Linkedn
+    <div id = "Posts"></div>
+    <button onclick="getRecentPost()">Get Recent Post</button>
+<script>
+    //async await is  just syntactic sugar for .then()
+    // async function getRecentPost(){
+    //     const responce = await axios.get("https://jsonplaceholder.typicode.com/posts/2");
+    //     console.log(responce.data);
+    //     document.getElementById("Posts").innerHTML = responce.data.body;
+    // }
+    //getRecentPost();
+     async function getRecentPost(){
+        const responce = await axios.get("https://jsonplaceholder.typicode.com/posts");
+       const arr = responce.data;
+       for(let i =0 ; i < arr.length ; i++){
+           document.getElementById("Posts").innerHTML += ('<div>' +arr[i].body + '</div>');
+       }
+    }
+    
+</script>
+
+</body>
+</html>
+   

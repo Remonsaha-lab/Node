@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Todos</title>
+  <link rel="stylesheet" href="todo.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      <div class="todo-app">
+        <div class="title">
+          <h1>Todo List</h1>
+        </div>
+        <div style="font-size:13px;color:#2d3748;margin-bottom:4px">Logged in as <span id="userDisplay"></span></div>
+        <div class="todo-input">
+          <input id="input_box" type="text" placeholder="Add a new task" />
+          <button>Add</button>
+        </div>
+        <ul id="Todo-List"></ul>
+      </div>
+    </div>
+  </div>
+  <button class="logout-button" onclick="logout()">Logout</button>
+  <script src="todo.js"></script>
+</body>
+</html>
