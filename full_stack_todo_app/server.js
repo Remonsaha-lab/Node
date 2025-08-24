@@ -44,7 +44,13 @@ app.post("/signup", logger, (req, res) => {
 });
 
 
-app.get(["/", "/login"], (_req, res) => {
+// Serve the main landing page at the root
+app.get("/", (_req, res) => {
+    res.sendFile(path.join(__dirname, "public", "page.html"));
+});
+
+// Serve the login page at /login
+app.get("/login", (_req, res) => {
     res.sendFile(path.join(__dirname, "public", "login.html"));
 });
 
